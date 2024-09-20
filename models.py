@@ -44,7 +44,7 @@ def modify_task(task_id:int, new_task:str, complete:bool):
 
 def delete_task(task_id:int):
     session = Session()
-    task = session.query(ToDoItem).filter(ToDoItem.task == task_id)
+    task = session.query(ToDoItem).filter(ToDoItem.task == task_id).first()
     if task:
         session.delete(task)
         session.commit()
