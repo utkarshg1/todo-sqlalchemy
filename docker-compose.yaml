@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  personal-finance-manager:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    container_name: personal_finance_manager
